@@ -1,0 +1,16 @@
+<h2>{{@content.name}}</h2>
+<strong>{{@content.access}}</strong>
+
+{{#if @content.implements}}
+  Implements
+  {{#each @content.implements key="@index" as |implementer|}}
+    {{implementer}}
+  {{/each}}
+{{/if}}
+
+{{#if @content.methods}}
+  <h3>Methods</h3>
+  {{#each @content.methods key="@index" as |method|}}
+    <hello-world />
+  {{/each}}
+{{/if}}

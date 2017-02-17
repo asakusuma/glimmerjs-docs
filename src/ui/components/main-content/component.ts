@@ -44,6 +44,7 @@ export default class MainContent extends BaseComponent {
       return;
     }
     this.title = content.name;
-    console.log(content);
+    this.filteredContent = content;
+    console.log(this.filteredContent);
   }
 };

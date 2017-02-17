@@ -1,0 +1,11 @@
+<h5>{{@content.name}}</h5>
+<strong>{{@content.access}}</strong>
+
+{{#if @content.parameters}}
+  <h3>Parameters</h3>
+  <ol>
+  {{#each @content.parameters key="@index" as |param|}}
+    <li>{{param.name}} - {{param.type}}</li>
+  {{/each}}
+  </ol>
+{{/if}}

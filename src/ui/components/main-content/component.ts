@@ -9,12 +9,26 @@ export default class MainContent extends BaseComponent {
     super(args);
     const router = this.getRouter();
     this.originalContent = args.args.content;
-    this.routeTo(router.getPath());
+    this.bootInitialPage();
     router.watch((path: string) => {
       this.mutate(() => {
         this.routeTo(path);
       });
     });
+  }
+  bootInitialPage() {
+    const path = this.getRouter().getPath();
+    if (!path || path === '/') {
+      this.renderHome();
+    } else {
+      this.routeTo(path);
+    }
+  }
+  renderHome() {
+    this.title = 'Welome to the GlimmerJS API docs';
+  }
+  notFound() {
+    this.title = '404';
   }
   routeTo(path: string) {
     // TODO: handle nested routing in a real way
@@ -24,8 +38,12 @@ export default class MainContent extends BaseComponent {
     if (!query) {
       query = segs.pop();
     }
-    console.log(query);
     const content = findByUrlName(this.originalContent, query);
+    if (!content) {
+      this.notFound();
+      return;
+    }
     this.title = content.name;
+    console.log(content);
   }
 };

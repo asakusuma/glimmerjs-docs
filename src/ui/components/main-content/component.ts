@@ -17,14 +17,15 @@ export default class MainContent extends BaseComponent {
     });
   }
   routeTo(path: string) {
-      // Assumes that every url name is unqiue. Does not actually look at full path
-      let segs = path.split('/');
-      let query = segs.pop();
-      if (!query) {
-        query = segs.pop();
-      }
-      console.log(query);
-      const content = findByUrlName(this.originalContent, query);
-      this.title = content.name;
+    // TODO: handle nested routing in a real way
+    // Assumes that every url name is unqiue. Does not actually look at full path
+    let segs = path.split('/');
+    let query = segs.pop();
+    if (!query) {
+      query = segs.pop();
     }
+    console.log(query);
+    const content = findByUrlName(this.originalContent, query);
+    this.title = content.name;
+  }
 };

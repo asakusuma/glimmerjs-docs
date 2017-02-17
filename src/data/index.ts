@@ -27,6 +27,27 @@ function recurseInjectUrlPaths(obj) {
     }
 }
 
+export function findByUrlName(obj, query) {
+    if (!obj) {
+        return;
+    }
+    if (Array.isArray(obj)) {
+        for (let i = 0; i < obj.length; i++) {
+            const search = findByUrlName(obj[i], query);
+            if (search) {
+                return search;
+            }
+        }
+    } else if (obj.urlName === query) {
+        return obj;
+    } else {
+        return findByUrlName(obj.modules, query) ||
+            findByUrlName(obj.methods, query) ||
+            findByUrlName(obj.properties, query) ||
+            findByUrlName(obj.projects, query);
+    }
+}
+
 export function injectUrlPaths(obj: Object) {
     for (let i = 0; i < obj.projects.length; i++) {
         recurseInjectUrlPaths(obj.projects[i]);

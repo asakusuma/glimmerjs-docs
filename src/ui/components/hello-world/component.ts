@@ -1,8 +1,9 @@
-import Component from '@glimmer/component';
+import BaseComponent from '../BaseComponent';
 
-export default class HelloWorld extends Component {
+export default class HelloWorld extends BaseComponent {
+  name: string;
   constructor(args) {
-    console.log('HelloWorld constructor', args);
     super(args);
+    this.name = 'my name is';
   }
 };

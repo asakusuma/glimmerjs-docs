@@ -1,0 +1,413 @@
+{
+  "projects": [
+    {
+      "name": "@glimmer/resolver",
+      "type": "project",
+      "modules": [
+        {
+          "methods": [
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "get",
+              "shortName": "get",
+              "access": "public",
+              "itemtype": "Method",
+              "parameters": [
+                {
+                  "name": "specifier",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "has",
+              "shortName": "has",
+              "access": "public",
+              "itemtype": "Method",
+              "parameters": [
+                {
+                  "name": "specifier",
+                  "type": "string"
+                }
+              ]
+            }
+          ],
+          "events": [],
+          "properties": [
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "_entries",
+              "shortName": "_entries",
+              "access": "private",
+              "itemtype": "Property",
+              "type": "Dict"
+            }
+          ],
+          "name": "BasicRegistry",
+          "shortName": "BasicRegistry",
+          "access": "public",
+          "itemtype": "Class",
+          "implements": [
+            "ModuleRegistry"
+          ]
+        },
+        {
+          "methods": [
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "_definitiveCollection",
+              "shortName": "_definitiveCollection",
+              "access": "private",
+              "itemtype": "Method",
+              "parameters": [
+                {
+                  "name": "type",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "_serializeAndVerify",
+              "shortName": "_serializeAndVerify",
+              "access": "private",
+              "itemtype": "Method",
+              "parameters": [
+                {
+                  "name": "specifier",
+                  "type": "Specifier"
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "identify",
+              "shortName": "identify",
+              "access": "public",
+              "itemtype": "Method",
+              "parameters": [
+                {
+                  "name": "specifier",
+                  "type": "string"
+                },
+                {
+                  "name": "referrer",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "resolve",
+              "shortName": "resolve",
+              "access": "public",
+              "itemtype": "Method",
+              "parameters": [
+                {
+                  "name": "specifier",
+                  "type": "string"
+                },
+                {
+                  "name": "referrer",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "retrieve",
+              "shortName": "retrieve",
+              "access": "public",
+              "itemtype": "Method",
+              "parameters": [
+                {
+                  "name": "specifier",
+                  "type": "string"
+                }
+              ]
+            }
+          ],
+          "events": [],
+          "properties": [
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "config",
+              "shortName": "config",
+              "access": "public",
+              "itemtype": "Property",
+              "type": "ResolverConfiguration"
+            },
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "registry",
+              "shortName": "registry",
+              "access": "public",
+              "itemtype": "Property",
+              "type": "ModuleRegistry"
+            }
+          ],
+          "name": "Resolver",
+          "shortName": "Resolver",
+          "access": "public",
+          "itemtype": "Class",
+          "implements": [
+            "Resolver"
+          ]
+        },
+        {
+          "methods": [],
+          "events": [],
+          "properties": [
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "defaultType",
+              "shortName": "defaultType",
+              "access": "public",
+              "itemtype": "Property",
+              "type": "string"
+            },
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "group",
+              "shortName": "group",
+              "access": "public",
+              "itemtype": "Property",
+              "type": "string"
+            },
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "privateCollections",
+              "shortName": "privateCollections",
+              "access": "public",
+              "itemtype": "Property",
+              "type": "string"
+            },
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "types",
+              "shortName": "types",
+              "access": "public",
+              "itemtype": "Property",
+              "type": "string"
+            },
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "unresolvable",
+              "shortName": "unresolvable",
+              "access": "public",
+              "itemtype": "Property",
+              "type": "boolean"
+            }
+          ],
+          "name": "ModuleCollectionDefinition",
+          "shortName": "ModuleCollectionDefinition",
+          "access": "public",
+          "itemtype": "Interface"
+        },
+        {
+          "methods": [
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "get",
+              "shortName": "get",
+              "access": "public",
+              "itemtype": "Method",
+              "parameters": [
+                {
+                  "name": "specifier",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "has",
+              "shortName": "has",
+              "access": "public",
+              "itemtype": "Method",
+              "parameters": [
+                {
+                  "name": "specifier",
+                  "type": "string"
+                }
+              ]
+            }
+          ],
+          "events": [],
+          "properties": [],
+          "name": "ModuleRegistry",
+          "shortName": "ModuleRegistry",
+          "access": "public",
+          "itemtype": "Interface"
+        },
+        {
+          "methods": [],
+          "events": [],
+          "properties": [
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "definitiveCollection",
+              "shortName": "definitiveCollection",
+              "access": "public",
+              "itemtype": "Property",
+              "type": "string"
+            }
+          ],
+          "name": "ModuleTypeDefinition",
+          "shortName": "ModuleTypeDefinition",
+          "access": "public",
+          "itemtype": "Interface"
+        },
+        {
+          "methods": [],
+          "events": [],
+          "properties": [
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "mainPath",
+              "shortName": "mainPath",
+              "description": "By default, `mainPath = '/src'`.\n",
+              "access": "public",
+              "itemtype": "Property",
+              "type": "string"
+            },
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "name",
+              "shortName": "name",
+              "description": "For example, a package published to npm as `ember-super-input` must\nalso use this `name`.\n",
+              "access": "public",
+              "itemtype": "Property",
+              "type": "string"
+            },
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "rootName",
+              "shortName": "rootName",
+              "description": "For addons, the `rootName` will initially be a read-only property that\nequals the package `name` with any `ember-` and `ember-cli-` prefixes\nstripped. (e.g. `ember-super-input` becomes `super-input`). It's\npossible that custom overrides / aliases will be allowed in the future.\n\nAll apps should use a `rootName` of \"app\" for consistency.\n",
+              "access": "public",
+              "itemtype": "Property",
+              "type": "string"
+            }
+          ],
+          "name": "PackageDefinition",
+          "shortName": "PackageDefinition",
+          "access": "public",
+          "itemtype": "Interface"
+        },
+        {
+          "methods": [],
+          "events": [],
+          "properties": [
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "addons",
+              "shortName": "addons",
+              "access": "public",
+              "itemtype": "Property",
+              "type": "Dict"
+            },
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "app",
+              "shortName": "app",
+              "access": "public",
+              "itemtype": "Property",
+              "type": "PackageDefinition"
+            },
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "collections",
+              "shortName": "collections",
+              "access": "public",
+              "itemtype": "Property",
+              "type": "Dict"
+            },
+            {
+              "methods": [],
+              "events": [],
+              "properties": [],
+              "name": "types",
+              "shortName": "types",
+              "access": "public",
+              "itemtype": "Property",
+              "type": "Dict"
+            }
+          ],
+          "name": "ResolverConfiguration",
+          "shortName": "ResolverConfiguration",
+          "access": "public",
+          "itemtype": "Interface"
+        },
+        {
+          "methods": [],
+          "events": [],
+          "properties": [],
+          "name": "assert",
+          "shortName": "assert",
+          "access": "public",
+          "itemtype": "Function",
+          "parameters": [
+            {
+              "name": "description",
+              "type": "string"
+            },
+            {
+              "name": "test",
+              "type": "any"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

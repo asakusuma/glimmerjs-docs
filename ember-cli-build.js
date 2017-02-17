@@ -1,11 +1,25 @@
 /*jshint node:true*/
-/* global require, module */
+/* global require, module, escape */
 var GlimmerApp = require('@glimmer/application-pipeline/lib/broccoli/glimmer-app');
+var merge = require('broccoli-merge-trees');
+var Funnel = require('broccoli-funnel');
+var fs = require('fs');
+
+function GlimmerDocsApp(defaults, options) {
+  GlimmerApp.call(this, defaults, options);
+}
+
+GlimmerDocsApp.__proto__ = GlimmerApp;
+GlimmerDocsApp.prototype = Object.create(GlimmerApp.prototype);
+GlimmerDocsApp.prototype._contentForHead = function(content, config) {
+  GlimmerApp.prototype._contentForHead.call(this, content, config);
+  var docsContent = fs.readFileSync('./content/docs.json');
+  content.push('<meta name="docs-content" ' +
+                 'content="' + escape(docsContent) + '" />');
+}
 
 module.exports = function(defaults) {
-  var app = new GlimmerApp(defaults, {
-    // Add options here
-  });
+  var app = new GlimmerDocsApp(defaults, {});
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
@@ -20,5 +34,9 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  return app.toTree();
+  var contentTree = new Funnel('content', {
+    destDir: 'docs'
+  });
+
+  return merge([app.toTree(), contentTree]);
 };

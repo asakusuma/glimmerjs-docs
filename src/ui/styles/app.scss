@@ -1,3 +1,14 @@
-h1 {
-  color: blue;
+@import "normalize";
+@import "basic";
+
+#app-container {
+  margin-top: 10px;
+}
+
+#menu-container {
+  background-color: #F9F9F9;
+}
+
+#content-container {
+  background-color: #F9F9F9;
 }

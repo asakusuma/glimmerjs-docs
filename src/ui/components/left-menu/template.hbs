@@ -1,0 +1,12 @@
+<ul class="vertical menu" data-accordion-menu>
+  {{#each @content.projects key="@index" as |project|}}
+  <li>
+    <a class="app-link" href="/{{project.urlName}}">{{project.name}}</a>
+    <ul class="menu vertical nested">
+      {{#each project.modules key="@index" as |module|}}
+      <li><a class="app-link" href="/{{project.urlName}}/{{module.urlName}}">{{module.name}}</a></li>
+      {{/each}}
+    </ul>
+  </li>
+  {{/each}}
+</ul>

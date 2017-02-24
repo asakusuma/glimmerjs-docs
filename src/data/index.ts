@@ -10,20 +10,16 @@ export function fetchDocs() {
     });
 }
 
-function injectUrlPathsOnArray(array) {
-    if (array) {
-        for (let i = 0; i < array.length; i++) {
-            recurseInjectUrlPaths(array[i]);
-        }
-    }
-}
-
 function recurseInjectUrlPaths(obj) {
     if (obj) {
         obj.urlName = obj.name.replace('@', '').replace('/', '-').toLowerCase();
-        injectUrlPathsOnArray(obj.modules);
-        injectUrlPathsOnArray(obj.methods);
-        injectUrlPathsOnArray(obj.properties);
+        ['methods', 'properties', 'modules'].forEach((key) => {
+            if (obj[key] && obj[key].length > 0) {
+                obj[key].map(recurseInjectUrlPaths);
+            } else {
+                delete obj[key];
+            }
+        });
     }
 }
 
